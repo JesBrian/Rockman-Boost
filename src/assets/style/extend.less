@@ -1,0 +1,128 @@
+/* 灰色质感背景 */
+.cube-bg {
+	box-sizing: border-box;
+	border: 1px solid #000;
+	border-radius: 3px;
+	background-image: linear-gradient(#444444, #373738, #222);
+}
+
+/* 黑色类玻璃质感背景 */
+.glass-bg {
+	box-sizing: border-box;
+	background: #111;
+	border: 1px solid #000;
+	border-radius: 4px;
+	box-shadow: inset 0 0 0 1px #272727;
+}
+
+/* 阴影效果 */
+.box-show {
+	box-sizing: border-box;
+	box-shadow: inset 0 2px 1px -1px rgba(255, 255, 255, 0.2), inset 0 -2px 1px -1px rgba(0, 0, 0, 0.2), 0 12px 12px rgba(0, 0, 0, 0.5), 0 4px 6px rgba(0, 0, 0, 0.3), inset 0 0 0 1px #272727;
+}
+
+/* 盒子分割线效果 */
+.box-shadow, .box-rules-horizontal {
+	position: relative;
+}
+
+.box-shadow:before, .box-shadow:after {
+	content: '';
+	width: 99%;
+	height: 1px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	position: absolute;
+	z-index: 3;
+}
+
+.box-rules-horizontal:before, .box-rules-horizontal:after {
+	content: '';
+	width: 1px;
+	height: 100%;
+	left: 100%;
+	position: absolute;
+	z-index: 3;
+}
+
+.box-shadow:last-child:before, .box-shadow:last-child:after,
+.box-rules-horizontal:last-child:before, .box-rules-horizontal:last-child:after {
+	display: none;
+}
+
+.box-shadow:before, .box-rules-horizontal:before {
+	background: #333;
+}
+
+.box-shadow:before {
+	bottom: -1px;
+}
+
+.box-rules-horizontal:before {
+	right: -1px;
+}
+
+.box-shadow:after, .box-rules-horizontal:after {
+	background: #000;
+}
+
+.box-shadow:after {
+	bottom: -.3px;
+}
+
+.box-rules-horizontal:after {
+	right: -.3px;
+}
+
+/* 禁止选择 */
+.ban-select {
+	user-select: none;
+}
+
+/* 文本省略 */
+.text-hidden {
+	word-break: break-all;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+/* 输入框闪光 */
+.glow-input {
+	&:focus {
+		box-sizing: border-box;
+		animation: glow 666ms ease-out infinite alternate;
+	}
+}
+
+@keyframes glow {
+	0% {
+		border-color: #22E8FF;
+		box-shadow: 0 0 5px rgba(87, 228, 255, 0.2), inset 0 0 5px rgba(46, 231, 255, 0.1), 0 2px 0 #000;
+	}
+	100% {
+		border-color: #30CDFF;
+		box-shadow: 0 0 20px rgba(46, 231, 255, 0.6), inset 0 0 10px rgba(46, 231, 255, 0.4), 0 2px 0 #000;
+	}
+}
+
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 6px;
+
+	&-track-piece {
+		background-color: #333;
+		border-radius: 8px;
+	}
+
+	&-thumb:vertical {
+		height: 5px;
+		background: linear-gradient(to right, rgba(0, 126, 240, 0.5), rgba(0, 216, 255, 0.5), rgba(0, 216, 255, 0.5));
+		-webkit-border-radius: 8px;
+	}
+
+	&-thumb:vertical:hover {
+		background: linear-gradient(to right, #007ef0, #00d8ff, #00d8ff);
+	}
+}
