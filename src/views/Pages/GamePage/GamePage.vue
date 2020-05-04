@@ -1,6 +1,5 @@
 <template>
-  <div class='GamePage'>
-    Game Page <br/>
+  <div id="gameContainer" class='GamePage'>
   </div>
 </template>
 
@@ -16,9 +15,30 @@
       return {};
     };
 
-    created (): void {
+    mounted (): void {
       this.game = new Phaser.Game({
+        width: '100%',
+        height: '100%',
+        parent: 'gameContainer',
+        type: Phaser.AUTO,
+        scene: {
+          preload: this.gamePreload,
+          create: this.gameCreate,
+          update: this.gameUpdate
+        }
       });
+    }
+
+    gamePreload (): void {
+      console.log('gamePreload ---- gamePreload');
+    }
+
+    gameCreate (): void {
+      console.log('gameCreate ---- gameCreate');
+    }
+
+    gameUpdate (): void {
+      console.log('gameUpdate ---- gameUpdate');
     }
 
     testClick (val: string = '') {

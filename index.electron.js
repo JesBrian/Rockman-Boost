@@ -8,10 +8,12 @@ let win;
 function createWindow() {
   // 创建浏览器窗口。
   win = new BrowserWindow({
-    // resizable: false,
-    minWidth: 1180,
-    minHeight: 638,
     frame: false,
+    minWidth: 1080,
+    minHeight: 638,
+    maxWidth: 1080,
+    maxHeight: 638,
+    resizable: false,
     transparent: true,
     webPreferences: {
       webSecurity: false // 跨域
