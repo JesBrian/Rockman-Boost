@@ -1,7 +1,7 @@
 <template>
   <div class='IndexPage'>
     Index Page <br/>
-    <router-link to='/edit/1322'> 跳转 EditPage </router-link>
+    <router-link to='/game'> 跳转 GamePage </router-link>
 
     <jes-button @onClick="testClick('gg')" >
       1234

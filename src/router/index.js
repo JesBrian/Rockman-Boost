@@ -12,6 +12,10 @@ export default new VueRouter({
     {
       path: '/home',
       component: () => import('../views/Pages/IndexPage/IndexPage.vue')
+    },
+    {
+      path: '/game',
+      component: () => import('../views/Pages/GamePage/GamePage.vue')
     }
   ]
 })

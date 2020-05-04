@@ -4,10 +4,6 @@
     <left-bar />
     <view-content />
     <div class="BottomBar">
-      <div></div>
-      <div>
-        <router-link to="/funny" >娱乐</router-link>
-      </div>
     </div>
   </div>
 </template>
