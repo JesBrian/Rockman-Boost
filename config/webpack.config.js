@@ -3,9 +3,7 @@
 const devMode = process.env.NODE_ENV === 'development';
 
 const path = require('path');
-
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const Webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin'); // 要使用需要一个个文件引入...
@@ -15,7 +13,7 @@ module.exports = {
   entry: ['@babel/polyfill', path.resolve(__dirname, '../index.view.js')],    // 入口文件
 
   output: {
-    filename: '[name].[hash:8].js',
+    filename: devMode ? '[name].js' : '[name].[chunkhash].js',
     path: path.resolve(__dirname, '../dist') // 输出文件夹
   },
 
@@ -162,8 +160,6 @@ module.exports = {
       cleanOnceBeforeBuildPatterns: ['**/*', '!.gitkeep'],
     }),
 
-    new Webpack.HotModuleReplacementPlugin(),
-
     new VueLoaderPlugin(),
 
     new HtmlWebpackPlugin({
@@ -171,8 +167,8 @@ module.exports = {
     }),
 
     new MiniCssExtractPlugin({
-      filename: devMode ? '[name].css' : '[name].[hash].css',
-      chunkFilename: devMode ? '[id].css' : '[id].[hash].css'
+      filename: devMode ? '[name].css' : '[name].[contenthash].css',
+      chunkFilename: devMode ? '[name].css' : '[name].[contenthash].css'
     })
   ]
 };

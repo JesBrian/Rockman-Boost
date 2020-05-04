@@ -2,7 +2,6 @@
 
 const Webpack = require('webpack');
 const WebpackMerge = require('webpack-merge');
-
 const webpackConfig = require('./webpack.config.js');
 
 module.exports = WebpackMerge(webpackConfig, {
