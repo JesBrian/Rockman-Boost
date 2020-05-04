@@ -6,7 +6,6 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin'); // 要使用需要一个个文件引入...
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
@@ -59,20 +58,6 @@ module.exports = {
         },
         exclude: /node_modules/
       },
-      // Css 文件
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: devMode ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '../dist/css/',
-              hmr: devMode
-            }
-          },
-          'css-loader'
-        ]
-      },
       // Less 文件
       {
         test: /\.less$/,
@@ -84,7 +69,43 @@ module.exports = {
               hmr: devMode
             }
           },
-          'css-loader', 'less-loader'
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2
+            }
+          },
+          'less-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: __dirname + '../postcss.config.js'
+              }
+            }
+          }
+        ]
+      },
+      // Css 文件
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: devMode ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../dist/css/',
+              hmr: devMode
+            }
+          },
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: __dirname + '../postcss.config.js'
+              }
+            }
+          }
         ]
       },
       // 图片 文件

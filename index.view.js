@@ -27,6 +27,10 @@ Vue.use(VueLazyload, {
 import JesLoading from 'jes-loading';
 Vue.use(JesLoading);
 
+
+import JesButton from '@/components/JesButton/JesButton.vue';
+Vue.component('jes-button', JesButton);
+
 // 引入 App 根组件
 import App from './src/App.vue';
 
