@@ -146,7 +146,7 @@ module.exports = {
 
   resolve: {
     // 文件后缀名
-    extensions: ['*', '.js', '.json', '.vue', '.ts'],
+    extensions: ['.vue', '.ts', '.js', '.json', '*'],
 
     // 路径别名
     alias: {
