@@ -3,7 +3,7 @@ const devMode = process.env.NODE_ENV === 'development';
 const { app, BrowserWindow, ipcMain } = require('electron');
 
 // 保持对 window 对象的全局引用，如果不这么做的话，当 JavaScript 对象被垃圾回收的时候，window 对象将会自动的关闭
-let win;
+let win = null;
 
 function createWindow() {
   // 创建浏览器窗口。
@@ -29,12 +29,10 @@ function createWindow() {
   win.webContents.openDevTools();
 
   // 当 window 被关闭，这个事件会被触发。
-  win.on('closed', () => {
-    // 取消引用 window 对象，如果你的应用支持多窗口的话，
-    // 通常会把多个 window 对象存放在一个数组里面，
-    // 与此同时，你应该删除相应的元素。
-    win = null
-  })
+  // 取消引用 window 对象，如果你的应用支持多窗口的话，
+  // 通常会把多个 window 对象存放在一个数组里面，
+  // 与此同时，你应该删除相应的元素。
+  win.on('closed', () => win = null);
 }
 
 // Electron 会在初始化后并准备
@@ -55,6 +53,12 @@ app.on('activate', () => {
   if (win === null) createWindow();
 });
 
-ipcMain.on('quitApp', (event, arg) => {
-  app.quit();
-});
+/**
+ * 退出程序
+ */
+ipcMain.on('quitApp', app.quit);
+
+/**
+ * 最小化程序窗口
+ */
+ipcMain.on('minApp', () => win.minimize());

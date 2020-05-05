@@ -22,6 +22,7 @@
     logoImg = LogoImg;
 
     minApp(): void {
+      this.$ipcRenderer.send('minApp');
     }
 
     closeApp(): void {
