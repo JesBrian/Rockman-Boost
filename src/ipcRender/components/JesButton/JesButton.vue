@@ -18,5 +18,5 @@
 </script>
 
 <style lang='less' scoped >
-  @import './JesButton.less';
+  @import 'JesButton.less';
 </style>

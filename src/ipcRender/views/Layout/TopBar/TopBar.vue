@@ -2,12 +2,11 @@
   <div class="TopBar">
     <!-- LOGO -->
     <img class="logo" :src="logoImg"/>
-    <span class="label">Blog Manage Portal</span>
+    <span class="label">Rockman Boost</span>
 
     <!-- 应用设置/控制窗口 -->
     <div class="operationBar ">
       <div class="dotBtn min" @click="minApp">-</div>
-      <div class="dotBtn max" @click="maxApp">+</div>
       <div class="dotBtn close" @click="closeApp">×</div>
     </div>
   </div>
@@ -25,14 +24,12 @@
     minApp(): void {
     }
 
-    maxApp(): void {
-    }
-
     closeApp(): void {
+      this.$ipcRenderer.send('quitApp');
     }
   };
 </script>
 
 <style lang="less" scoped>
-  @import './TopBar.less';
+  @import 'TopBar.less';
 </style>

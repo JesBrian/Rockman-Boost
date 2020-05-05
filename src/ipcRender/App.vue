@@ -15,6 +15,9 @@
   import LeftBar from './views/Layout/LeftBar/LeftBar.vue'
   import ViewContent from './views/Layout/ViewContent/ViewContent.vue'
 
+  const ipcRenderer = window.require('electron').ipcRenderer;
+  // import { ipcRenderer } from 'electron';
+
   @Component({
     components: {
       TopBar, LeftBar, ViewContent

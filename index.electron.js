@@ -1,6 +1,6 @@
-const devMode = process.env.NODE_ENV === 'development';
 
-const {app, BrowserWindow} = require('electron');
+const devMode = process.env.NODE_ENV === 'development';
+const { app, BrowserWindow, ipcMain } = require('electron');
 
 // 保持对 window 对象的全局引用，如果不这么做的话，当 JavaScript 对象被垃圾回收的时候，window 对象将会自动的关闭
 let win;
@@ -16,7 +16,8 @@ function createWindow() {
     resizable: false,
     transparent: true,
     webPreferences: {
-      webSecurity: false // 跨域
+      webSecurity: false, // 跨域
+      nodeIntegration: true,
     }
   });
 
@@ -54,3 +55,6 @@ app.on('activate', () => {
   if (win === null) createWindow();
 });
 
+ipcMain.on('quitApp', (event, arg) => {
+  app.quit();
+});

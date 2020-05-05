@@ -9,7 +9,7 @@
 
     <jes-loading />
 
-    <jes-notification @onClick="testClick" @onClose="testClose" title="title" message="message" />
+<!--    <jes-notification @onClick="testClick" @onClose="testClose" title="title" message="message" />-->
   </div>
 </template>
 
@@ -30,5 +30,5 @@
 </script>
 
 <style lang='less' scoped>
-  @import './IndexPage.less';
+  @import 'IndexPage.less';
 </style>

@@ -15,5 +15,5 @@
 </script>
 
 <style lang='less' scoped>
-  @import './LeftBar.less';
+  @import 'LeftBar.less';
 </style>

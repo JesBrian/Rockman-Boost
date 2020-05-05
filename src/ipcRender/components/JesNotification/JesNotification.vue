@@ -72,5 +72,5 @@
 </script>
 
 <style lang='less' scoped >
-  @import './JesNotification.less';
+  @import 'JesNotification.less';
 </style>

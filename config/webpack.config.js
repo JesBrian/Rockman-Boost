@@ -172,7 +172,7 @@ module.exports = {
     // 路径别名
     alias: {
       'vue$': 'vue/dist/vue.runtime.esm.js',
-      '@': path.resolve(__dirname, '../src')
+      '@': path.resolve(__dirname, '../src/ipcRender')
     }
   },
 
