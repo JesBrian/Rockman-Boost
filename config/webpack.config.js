@@ -13,7 +13,7 @@ module.exports = {
 
   output: {
     filename: devMode ? '[name].js' : '[name].[chunkhash].js',
-    path: path.resolve(__dirname, '../dist') // 输出文件夹
+    path: path.resolve(__dirname, '../dist/render') // 输出文件夹
   },
 
   module: {

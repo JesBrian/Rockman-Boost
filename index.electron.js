@@ -23,7 +23,7 @@ function createWindow() {
 
   // 加载页面
   if (devMode) win.loadURL('http://localhost:5354/#/');
-  else win.loadFile('index.html');
+  else win.loadFile('./dist/render/index.html');
 
   // 打开开发者工具
   win.webContents.openDevTools();

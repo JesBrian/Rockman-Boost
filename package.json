@@ -64,20 +64,5 @@
     "vuex": "^3.4.0",
     "vuex-class": "^0.3.2",
     "phaser": "^3.23.0"
-  },
-  "build": {
-    "productName": "Rockman-Boost",
-    "appId": "com.jesbrian.Rockman-Boost",
-    "copyright": "xxxx",
-    "directories": {
-      "buildResources": "dist",
-      "output": "build"
-    },
-    "win": {
-      "icon": "icons/256x256.ico"
-    },
-    "mac": {
-      "icon": "icons/512x512.ico"
-    }
   }
 }

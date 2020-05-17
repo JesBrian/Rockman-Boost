@@ -1,0 +1,15 @@
+{
+    "productName": "Rockman-Boost",
+    "appId": "com.jesbrian.Rockman-Boost",
+    "copyright": "xxxx",
+    "directories": {
+        "buildResources": "./",
+        "output": "build"
+    },
+    "win": {
+        "icon": "icons/256x256.ico"
+    },
+    "mac": {
+        "icon": "icons/512x512.ico"
+    }
+}
