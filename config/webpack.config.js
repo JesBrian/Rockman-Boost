@@ -66,7 +66,8 @@ module.exports = {
             loader: devMode ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
             options: {
               publicPath: '../dist/css/',
-              hmr: devMode
+              hmr: devMode,
+              reloadAll: true
             }
           },
           {
@@ -94,7 +95,8 @@ module.exports = {
             loader: devMode ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
             options: {
               publicPath: '../dist/css/',
-              hmr: devMode
+              hmr: devMode,
+              reloadAll: true
             }
           },
           'css-loader',
