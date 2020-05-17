@@ -23,6 +23,7 @@
     "copy-webpack-plugin": "^6.0.1",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
+    "electron": "^8.2.5",
     "electron-builder": "^22.6.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^6.0.0",
@@ -65,15 +66,15 @@
     "phaser": "^3.23.0"
   },
   "build": {
-    "productName": "RockmanBoost",
-    "appId": "com.jesbrian.rockmanboost",
-    "copyright": "Copyright 2020 dragon",
+    "productName": "Rockman-Boost",
+    "appId": "com.jesbrian.Rockman-Boost",
+    "copyright": "xxxx",
     "directories": {
-      "buildResources": "./dist",
-      "output": "./build"
+      "buildResources": "dist",
+      "output": "build"
     },
     "win": {
-      "icon": "icons/512x512.ico"
+      "icon": "icons/256x256.ico"
     },
     "mac": {
       "icon": "icons/512x512.ico"
